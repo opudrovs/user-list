@@ -1,15 +1,3 @@
-.pageHome {
-    display: flex;
-    justify-content: flex-start;
-}
-
-/* Large devices */
-@media (min-width: 992px) {
-    .pageHome {
-
-    }
-}
-
 .usersContainer {
     width: 50%;
 }

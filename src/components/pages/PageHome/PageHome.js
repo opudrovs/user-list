@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 import UsersContainer from './UsersContainer/UsersContainer';
 import UserInfo from './UserInfo/UserInfo';
@@ -26,14 +26,14 @@ class PageHome extends Component {
 
     render() {
         return (
-            <div className={styles.pageHome}>
+            <Fragment>
                 <div className={styles.usersContainer}>
                     <UsersContainer selectUser={this.selectUser} />
                 </div>
                 <div className={styles.userInfo}>
                     <UserInfo user={this.state.selectedUser} />
                 </div>
-            </div>
+            </Fragment>
         );
     }
 }
