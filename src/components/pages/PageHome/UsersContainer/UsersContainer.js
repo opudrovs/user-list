@@ -93,7 +93,7 @@ class UsersContainer extends Component {
     render() {
         return (
             <div className={styles.usersContainer}>
-                <div className={styles.header}>
+                <div>
                     <Header />
                 </div>
                 <div className={styles.searchBar}>
@@ -101,7 +101,7 @@ class UsersContainer extends Component {
                         setUserName={this.setUserName}
                     />
                 </div>
-                <div className={styles.users}>
+                <div>
                     {this.state.selectableUsers.length > 0
                     ?
                     <Users

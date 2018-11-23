@@ -3,10 +3,6 @@
     flex-direction: column;
 }
 
-.header {
-
-}
-
 .searchBar {
     margin-bottom: 2rem;
     display: flex;
@@ -18,10 +14,6 @@
     .searchBar {
         margin-left: 2rem;
     }
-}
-
-.users {
-
 }
 
 .loaderContainer {

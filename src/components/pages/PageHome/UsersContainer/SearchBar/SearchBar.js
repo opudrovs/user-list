@@ -36,10 +36,7 @@ class SearchBar extends Component {
         return (
             <div className={styles.searchBar}>
                 <span className={styles.caption}>Filter users by name:</span>
-                <form
-                    className={styles.form}
-                    onSubmit={this.onSubmitHandler}
-                >
+                <form onSubmit={this.onSubmitHandler}>
                     <TextField
                         id="search-string"
                         name="user_name"
