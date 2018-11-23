@@ -9,7 +9,6 @@ const InfoItem = ({
     style,
     classNames
 }) => {
-    console.log(classNames);
     return (
         <div
             className={`${styles.infoItem}${classNames && classNames.length > 0 ? ` ${classNames.join(' ')}` : ''}`}
