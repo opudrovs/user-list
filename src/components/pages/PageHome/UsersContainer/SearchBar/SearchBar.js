@@ -41,7 +41,7 @@ class SearchBar extends Component {
                         id="search-string"
                         name="user_name"
                         value={this.state.userName}
-                        placeholder="Enter user name"
+                        placeholder="User name"
                         maxLength="30"
                         classNames={[styles.textField]}
                         onChangeHandler={this.onChangeHandler}

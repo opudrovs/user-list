@@ -29,8 +29,8 @@
     top: 0;
 }
 
-/* Small devices */
-@media (min-width: 576px) {
+/* Large devices */
+@media (min-width: 992px) {
     .userInfo {
         width: 30%;
         right: 10%;
