@@ -4,17 +4,10 @@
     padding: 1rem 1rem;
 }
 
-/* Medium devices */
-@media (min-width: 768px) {
-    .spacing {
-        flex: 0 50%;
-    }
-}
-
 /* Large devices */
 @media (min-width: 992px) {
     .spacing {
-        padding: 1rem 2rem;
+        flex: 0 50%;
     }
 }
 
@@ -94,8 +87,8 @@
     text-overflow: ellipsis;
 }
 
-/* Medium devices */
-@media (min-width: 768px) {
+/* Large devices */
+@media (min-width: 992px) {
     .name {
         margin-left: 2rem;
     }
