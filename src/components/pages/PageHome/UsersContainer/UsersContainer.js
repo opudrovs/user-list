@@ -16,8 +16,8 @@ import UtilsUser from 'utils/UtilsUser';
 import styles from './UsersContainer.css'
 
 class UsersContainer extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             selectableUsers: [],
