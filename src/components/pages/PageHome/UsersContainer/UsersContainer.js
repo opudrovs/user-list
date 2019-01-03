@@ -69,7 +69,7 @@ class UsersContainer extends Component {
             selectableUsers: users
         });
 
-        let selectedUser = users[userIndex];
+        const selectedUser = users[userIndex];
         this.props.selectUser(selectedUser.isSelected ? selectedUser.data : null);
     }
 

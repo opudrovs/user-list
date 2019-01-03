@@ -9,7 +9,7 @@ import { sanitizeString } from 'utils/UtilsString';
 import styles from './UserInfo.css';
 
 const UserInfo = ({ user }) => {
-    let fullName = composeFullName(user);
+    const fullName = composeFullName(user);
 
     const items = user
         ?

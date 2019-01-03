@@ -19,7 +19,7 @@ class SearchBar extends Component {
     /* EVENT HANDLERS */
 
     onChangeHandler(e) {
-        let userName = e.target.value;
+        const userName = e.target.value;
         this.setState({
             userName: userName
         });
