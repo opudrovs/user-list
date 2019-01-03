@@ -11,7 +11,7 @@ import Users from './Users/Users';
 
 import { USERS_API_URL } from 'constants/Constants';
 
-import UtilsUser from 'utils/UtilsUser';
+import { composeFullName } from 'utils/UtilsUser';
 
 import styles from './UsersContainer.css';
 
@@ -86,7 +86,7 @@ class UsersContainer extends Component {
 
         return this.state.selectableUsers
             .filter(element => {
-                return UtilsUser.fullName(element.data).toLowerCase().indexOf(userName) !== -1;
+                return composeFullName(element.data).toLowerCase().indexOf(userName) !== -1;
             });
     }
 
