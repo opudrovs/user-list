@@ -9,8 +9,8 @@ const User = ({
     selectableUser,
     toggleUserSelected
 }) => {
-    let user = selectableUser.data;
-    let fullName = composeFullName(user);
+    const user = selectableUser.data;
+    const fullName = composeFullName(user);
 
     return (
         <div className={styles.spacing}>
@@ -18,12 +18,15 @@ const User = ({
                 className={`${styles.user}${selectableUser.isSelected ? ` ${styles.selected}` : ''}`}
                 onClick={() => toggleUserSelected(selectableUser.index)}
             >
+                {user && user.picture && user.picture.medium
+                &&
                 <img
                     src={user.picture.medium}
                     title={fullName}
                     alt={fullName}
                     className={styles.portrait}
-                />
+                />}
+
                 <div className={styles.name}>{fullName}</div>
             </div>
         </div>
