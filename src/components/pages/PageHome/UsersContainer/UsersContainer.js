@@ -9,11 +9,11 @@ import Header from './Header/Header';
 import SearchBar from './SearchBar/SearchBar';
 import Users from './Users/Users';
 
-import ConstantsNetworking from 'constants/ConstantsNetworking';
+import { USERS_API_URL } from 'constants/Constants';
 
-import UtilsUser from 'utils/UtilsUser';
+import { composeFullName } from 'utils/UtilsUser';
 
-import styles from './UsersContainer.css'
+import styles from './UsersContainer.css';
 
 class UsersContainer extends Component {
     constructor(props) {
@@ -39,7 +39,7 @@ class UsersContainer extends Component {
     /* METHODS */
 
     getUsersData() {
-        axios.get(ConstantsNetworking.Url.USERS)
+        axios.get(USERS_API_URL)
             .then(response => {
                 const users = response.data.results.map((element, index) => {
                     return {
@@ -86,7 +86,7 @@ class UsersContainer extends Component {
 
         return this.state.selectableUsers
             .filter(element => {
-                return UtilsUser.fullName(element.data).toLowerCase().indexOf(userName) !== -1;
+                return composeFullName(element.data).toLowerCase().indexOf(userName) !== -1;
             });
     }
 

@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 import InfoItem from './InfoItem/InfoItem';
 
-import UtilsUser from 'utils/UtilsUser';
+import { composeFullName, composeAddress } from 'utils/UtilsUser';
 
 import styles from './UserInfo.css';
 
 const UserInfo = ({ user }) => {
-    let fullName = user ? UtilsUser.fullName(user) : '';
+    let fullName = user ? composeFullName(user) : '';
 
     const items = user
     ?
@@ -16,7 +16,7 @@ const UserInfo = ({ user }) => {
         {label: 'Name', text: fullName, style: { textTransform: 'capitalize' }, classNames: [styles.itemName]},
         {label: 'Email Address', text: user.email},
         {label: 'Phone Number', text: user.cell},
-        {label: 'Address', text: UtilsUser.address(user), style: { textTransform: 'capitalize' }},
+        {label: 'Address', text: composeAddress(user), style: { textTransform: 'capitalize' }},
     ]
     :
     [];
