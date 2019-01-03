@@ -12,15 +12,15 @@ const UserInfo = ({ user }) => {
     let fullName = composeFullName(user);
 
     const items = user
-    ?
-    [
-        {label: 'Name', text: fullName, style: { textTransform: 'capitalize' }, classNames: [styles.itemName]},
-        {label: 'Email Address', text: sanitizeString(user.email)},
-        {label: 'Phone Number', text: sanitizeString(user.cell)},
-        {label: 'Address', text: composeAddress(user), style: { textTransform: 'capitalize' }},
-    ]
-    :
-    [];
+        ?
+        [
+            { label: 'Name', text: fullName, style: { textTransform: 'capitalize' }, classNames: [styles.itemName] },
+            { label: 'Email Address', text: sanitizeString(user.email) },
+            { label: 'Phone Number', text: sanitizeString(user.cell) },
+            { label: 'Address', text: composeAddress(user), style: { textTransform: 'capitalize' } },
+        ]
+        :
+        [];
 
     return (
         <div className={`${styles.userInfo}${user ? '' : ` ${styles.hidden}`}`}>
@@ -29,7 +29,8 @@ const UserInfo = ({ user }) => {
                 &&
                 <Fragment>
                     <div className={styles.portraitContainer}>
-                        <div className={styles.portraitBackground} style={{ backgroundImage: `url(${user.picture.large})` }}>
+                        <div className={styles.portraitBackground}
+                             style={{ backgroundImage: `url(${user.picture.large})` }}>
 
                         </div>
                         <img

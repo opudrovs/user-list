@@ -23,7 +23,7 @@ class SearchBar extends Component {
         this.setState({
             userName: userName
         });
-        this.props.setUserName(userName.toLowerCase())
+        this.props.setUserName(userName.toLowerCase());
     }
 
     onSubmitHandler(e) {

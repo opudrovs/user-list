@@ -86,7 +86,9 @@ class UsersContainer extends Component {
 
         return this.state.selectableUsers
             .filter(element => {
-                return composeFullName(element.data).toLowerCase().indexOf(userName) !== -1;
+                return composeFullName(element.data)
+                    .toLowerCase()
+                    .indexOf(userName) !== -1;
             });
     }
 
@@ -103,17 +105,17 @@ class UsersContainer extends Component {
                 </div>
                 <div>
                     {this.state.selectableUsers.length > 0
-                    ?
-                    <Users
-                        selectableUsers={this.getFilteredUsers(this.state.userName)}
-                        toggleUserSelected={this.toggleUserSelected}
-                    />
-                    :
-                    <div className={styles.loaderContainer}>
-                        <div className={styles.loader}>
-                            <Loader />
-                        </div>
-                    </div>}
+                        ?
+                        <Users
+                            selectableUsers={this.getFilteredUsers(this.state.userName)}
+                            toggleUserSelected={this.toggleUserSelected}
+                        />
+                        :
+                        <div className={styles.loaderContainer}>
+                            <div className={styles.loader}>
+                                <Loader />
+                            </div>
+                        </div>}
                 </div>
             </div>
         );
