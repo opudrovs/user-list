@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import InfoItem from './InfoItem/InfoItem';
 
 import { composeFullName, composeAddress } from 'utils/UtilsUser';
+import { sanitizeString } from 'utils/UtilsString';
 
 import styles from './UserInfo.css';
 
@@ -14,8 +15,8 @@ const UserInfo = ({ user }) => {
     ?
     [
         {label: 'Name', text: fullName, style: { textTransform: 'capitalize' }, classNames: [styles.itemName]},
-        {label: 'Email Address', text: user.email},
-        {label: 'Phone Number', text: user.cell},
+        {label: 'Email Address', text: sanitizeString(user.email)},
+        {label: 'Phone Number', text: sanitizeString(user.cell)},
         {label: 'Address', text: composeAddress(user), style: { textTransform: 'capitalize' }},
     ]
     :
@@ -41,9 +42,9 @@ const UserInfo = ({ user }) => {
                         <span className={styles.additionalInfo}>{user.cell}</span>
                     </div>
                     <div className={styles.itemsContainer}>
-                        {items.map(element =>
+                        {items.map((element, index) =>
                             <InfoItem
-                                key={element.label}
+                                key={`item ${index}`}
                                 label={element.label}
                                 text={element.text}
                                 style={element.style}

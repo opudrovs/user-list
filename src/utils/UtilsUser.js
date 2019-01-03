@@ -1,10 +1,12 @@
+import { sanitizeString } from 'utils/UtilsString';
+
 export function composeFullName(user) {
     if (!user || !user.name) {
         return '';
     }
 
     const name = user.name;
-    return `${name.first || ''}${name.last ? ` ${name.last}` : ''}`;
+    return `${sanitizeString(name.first)}${name.last ? ` ${name.last}` : ''}`;
 }
 
 export function composeAddress(user) {
@@ -15,7 +17,7 @@ export function composeAddress(user) {
     const location = user.location;
 
     if (!location) {
-        return user.nat || '';
+        return sanitizeString(user.nat);
     }
 
     let parts = [];
