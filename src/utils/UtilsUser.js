@@ -1,9 +1,17 @@
 export function composeFullName(user) {
+    if (!user || !user.name) {
+        return '';
+    }
+
     const name = user.name;
     return `${name.first || ''}${name.last ? ` ${name.last}` : ''}`;
 }
 
 export function composeAddress(user) {
+    if (!user) {
+        return '';
+    }
+
     const location = user.location;
 
     if (!location) {

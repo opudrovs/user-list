@@ -8,7 +8,7 @@ import { composeFullName, composeAddress } from 'utils/UtilsUser';
 import styles from './UserInfo.css';
 
 const UserInfo = ({ user }) => {
-    let fullName = user ? composeFullName(user) : '';
+    let fullName = composeFullName(user);
 
     const items = user
     ?
