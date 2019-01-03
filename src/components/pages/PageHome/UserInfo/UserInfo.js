@@ -22,6 +22,14 @@ const UserInfo = ({ user }) => {
         :
         [];
 
+    const userHasLargePicture = user && user.picture && user.picture.large;
+    const largePictureUrl = userHasLargePicture ? user.picture.large : '' ;
+    const backgroundDivStyle = {};
+
+    if (userHasLargePicture) {
+        backgroundDivStyle.backgroundImage = `url(${largePictureUrl})`;
+    }
+
     return (
         <div className={`${styles.userInfo}${user ? '' : ` ${styles.hidden}`}`}>
             <div className={styles.scrollable}>
@@ -30,15 +38,16 @@ const UserInfo = ({ user }) => {
                 <Fragment>
                     <div className={styles.portraitContainer}>
                         <div className={styles.portraitBackground}
-                             style={{ backgroundImage: `url(${user.picture.large})` }}>
-
-                        </div>
+                             style={backgroundDivStyle}
+                        />
+                        {userHasLargePicture
+                        &&
                         <img
-                            src={user.picture.large}
+                            src={largePictureUrl}
                             title={fullName}
                             alt={fullName}
                             className={styles.portrait}
-                        />
+                        />}
                         <span className={styles.name}>{fullName}</span>
                         <span className={styles.additionalInfo}>{user.cell}</span>
                     </div>

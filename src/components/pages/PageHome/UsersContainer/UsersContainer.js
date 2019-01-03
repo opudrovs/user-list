@@ -106,7 +106,7 @@ class UsersContainer extends Component {
                 <div>
                     {this.state.selectableUsers.length > 0
                         ?
-                        <Users
+                         <Users
                             selectableUsers={this.getFilteredUsers(this.state.userName)}
                             toggleUserSelected={this.toggleUserSelected}
                         />
