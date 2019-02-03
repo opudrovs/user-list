@@ -117,7 +117,7 @@
       "react-app"
     ]
   },
-  "homepage": "http://opudrovs.github.io/job-test",
+  "homepage": "https://opudrovs.github.io/job-test",
   "devDependencies": {
     "gh-pages": "^2.0.1"
   }
