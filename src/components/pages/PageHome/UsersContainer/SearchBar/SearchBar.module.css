@@ -1,0 +1,33 @@
+.searchBar {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 992px) {
+    .searchBar {
+        flex-direction: row;
+    }
+}
+
+.caption {
+    margin-bottom: 1rem;
+    align-self: center;
+}
+
+@media (min-width: 992px) {
+    .caption {
+        margin-bottom: 0;
+    }
+}
+
+.textField {
+    width: 8rem;
+}
+
+@media (min-width: 576px) {
+    .textField {
+        margin-left: 2rem;
+        margin-right: 1rem;
+        width: auto;
+    }
+}
